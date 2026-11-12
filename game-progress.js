@@ -4,6 +4,8 @@
   const progressBar = document.querySelector(".game-progress-track");
   const progressFill = document.querySelector("#arcade-progress");
   const announcement = document.querySelector("#arcade-level-announcement");
+  const year = document.querySelector("#year");
+  if (year) year.textContent = String(new Date().getFullYear());
   if (!levelOutput || !xpOutput || !progressBar || !progressFill || !announcement) return;
 
   const storageKey = "farida-arcade-xp";

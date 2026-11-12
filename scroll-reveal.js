@@ -7,7 +7,7 @@
   }
 
   const targets = document.querySelectorAll(
-    ".work-preview, .preview-item, .star-arcade, .next-step, .about-story, .credential-block, .about-cta-inner, .project-card, .project-arcade, .reaction-quest, .project-end"
+    ".work-preview, .preview-item, .star-arcade, .sequence-quest, .next-step, .about-story, .credential-block, .about-cta-inner, .project-card, .project-arcade, .reaction-quest, .codebreaker-quest, .project-end"
   );
   if (!targets.length) return;
 

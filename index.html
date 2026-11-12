@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A personal portfolio sharing my background, skills, and projects.">
+  <meta name="description" content="Farida Aslanova’s portfolio of learning, projects, and original mini-games.">
   <title>Farida Aslanova | Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script src="theme.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,7 @@
   <script src="wheel-smoothing.js" defer></script>
   <script src="game-progress.js" defer></script>
   <script src="star-scout.js" defer></script>
+  <script src="sequence-game.js" defer></script>
   <script src="home-interactions.js" defer></script>
 </head>
 <body>
@@ -55,14 +57,14 @@
         <p class="hero-note">Currently learning, building, and figuring it out.</p>
         <div class="buddy-message" id="idea-buddy-message" role="status" aria-live="polite" hidden></div>
       </div>
-      <div class="hero-visual" aria-label="Profile photo placeholder">
+      <div class="hero-visual">
         <div class="visual-grid" aria-hidden="true"></div>
         <div class="photo-frame">
-          <div class="photo-placeholder" role="img" aria-label="Add your profile photo here">
+          <div class="photo-placeholder" role="img" aria-label="Illustrated portrait of a curious maker">
             <span class="photo-sun" aria-hidden="true"></span>
             <span class="photo-head" aria-hidden="true"></span>
             <span class="photo-body" aria-hidden="true"></span>
-            <span class="photo-label">YOUR PHOTO<br>GOES HERE</span>
+            <span class="photo-label">IDEAS<br>IN MOTION</span>
           </div>
         </div>
         <div class="orbit orbit-one" aria-hidden="true"></div>
@@ -95,7 +97,7 @@
         <div class="preview-grid">
           <a class="preview-item preview-web" href="projects.html#project-1">
             <span class="preview-number">01 / WEB</span>
-            <span class="preview-title">A first project<br>in progress</span>
+            <span class="preview-title">Interactive<br>portfolio</span>
             <span class="preview-arrow" aria-hidden="true">↗</span>
           </a>
           <a class="preview-item preview-code" href="projects.html#hour-of-code">
@@ -116,10 +118,10 @@
       <div class="shell">
         <div class="arcade-heading">
           <div>
-            <p class="eyebrow">SIDE QUEST / 01</p>
-            <h2 id="star-title">Star <em>scout.</em></h2>
+            <p class="eyebrow">ARCADE / QUEST BOARD</p>
+            <h2 id="star-title">Pick a side <em>quest.</em></h2>
           </div>
-          <p class="arcade-note">Collect as many stars as you can in 15 seconds. Each one adds a little XP to your player level.</p>
+          <p class="arcade-note">Two quick challenges are ready. Play, earn XP, and carry your progress across the site.</p>
         </div>
         <div class="star-game" id="star-game">
           <div class="star-game-arena" id="star-game-arena">
@@ -131,7 +133,7 @@
             </div>
           </div>
           <aside class="star-game-panel">
-            <div class="star-game-badges"><span>ARCADE / 01</span><span>+1 XP / STAR</span></div>
+            <div class="star-game-badges"><span>SIDE QUEST / 01</span><span>+1 XP / STAR</span></div>
             <h3>Catch the signal</h3>
             <p>Tap or click the star as it jumps around the map. Your best run stays saved on this device.</p>
             <div class="star-game-stats">
@@ -143,6 +145,29 @@
             <p class="star-game-help">Keyboard ready: focus the star and press Enter or Space.</p>
           </aside>
         </div>
+        <article class="sequence-quest" id="sequence-quest" aria-labelledby="sequence-title">
+          <div class="sequence-intro">
+            <p class="eyebrow">SIDE QUEST / 02</p>
+            <h3 id="sequence-title">Echo sequence</h3>
+            <p>Watch the pads light up, then repeat the pattern. Every cleared round earns 2 XP.</p>
+          </div>
+          <div class="sequence-layout">
+            <div class="sequence-pads" id="sequence-pads" role="group" aria-label="Four sequence pads">
+              <button class="sequence-pad pad-north" type="button" data-pad="north" aria-label="North pad" disabled><span aria-hidden="true">N</span><small>North</small></button>
+              <button class="sequence-pad pad-east" type="button" data-pad="east" aria-label="East pad" disabled><span aria-hidden="true">E</span><small>East</small></button>
+              <button class="sequence-pad pad-south" type="button" data-pad="south" aria-label="South pad" disabled><span aria-hidden="true">S</span><small>South</small></button>
+              <button class="sequence-pad pad-west" type="button" data-pad="west" aria-label="West pad" disabled><span aria-hidden="true">W</span><small>West</small></button>
+            </div>
+            <div class="sequence-panel">
+              <p class="sequence-status" id="sequence-status" role="status" aria-live="polite">Start the quest to see your first pattern.</p>
+              <div class="sequence-stats">
+                <div><span>Round</span><output id="sequence-round">0</output></div>
+                <div><span>Best</span><output id="sequence-best">0</output></div>
+              </div>
+              <button class="button button-dark sequence-start" id="sequence-start" type="button">Start sequence</button>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 

@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A selection of my coding, Hour of Code, and robotics projects.">
-  <title>Projects | Your Name</title>
+  <title>Projects | Farida Aslanova</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script src="theme.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +17,7 @@
   <script src="game-progress.js" defer></script>
   <script src="signal-sprint.js" defer></script>
   <script src="memory-game.js" defer></script>
+  <script src="code-breaker.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -53,7 +55,6 @@
     <section class="projects-list section-band" id="project-list">
       <div class="shell project-stack">
         <article class="project-card" id="project-1">
-            
           <div class="project-image project-image-one">
             <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85" alt="Laptop displaying a web development workspace" loading="lazy">
             <span class="image-index">01</span>
@@ -61,9 +62,9 @@
           </div>
           <div class="project-copy">
             <p class="eyebrow">PROJECT 01 <span class="project-type">WEB · IN PROGRESS</span></p>
-            <h2>Project 1</h2>
-            <p>Add your project title and describe the idea, the challenge you explored, and what you learned along the way.</p>
-            <a class="project-link" href="https://youtu.be/HBecvjK9mwM?si=2HjR458MfhCHpb5J" >Watch Video</a>
+            <h2>Interactive portfolio</h2>
+            <p>A responsive portfolio with original mini-games, a shared XP system, and an accessible light and dark theme.</p>
+            <a class="project-link" href="https://youtu.be/HBecvjK9mwM?si=2HjR458MfhCHpb5J">Watch project video</a>
           </div>
         </article>
 
@@ -76,7 +77,7 @@
           <div class="project-copy">
             <p class="eyebrow">PROJECT 02 <span class="project-type">CODE · LEARNING</span></p>
             <h2>Hour of Code</h2>
-            <p>A hands-on introduction to coding. Add the activity you completed, what you created, and one new idea or skill you took away.</p>
+            <p>A hands-on coding activity built around experimentation, problem-solving, and bringing a small idea to life.</p>
             <a class="project-link" href="https://github.com/faridaslanova01/mygithub" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
           </div>
         </article>
@@ -90,37 +91,25 @@
           <div class="project-copy">
             <p class="eyebrow">PROJECT 03 <span class="project-type">ROBOTICS · TEAMWORK</span></p>
             <h2>Robotics</h2>
-            <p>From a first sketch to a working build: share the goal, your role, the tests you ran, and how the team solved a tricky part.</p>
+            <p>A collaborative robotics project exploring how testing and iteration can turn an idea into a working prototype.</p>
             <a class="project-link" href="https://github.com/faridaslanova01/mygithub" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
-        <article class="project-card project-card-reverse" id="project-4">
-          <div class="project-image project-image-four">
-            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85" alt="Notebook and pencil ready for a new project" loading="lazy">
-            <span class="image-index">04</span>
-            <span class="image-caption">YOUR NEXT IDEA</span>
-          </div>
-          <div class="project-copy">
-            <p class="eyebrow">EXTRA PROJECT <span class="project-type">YOUR CATEGORY</span></p>
-            <h2>One more idea</h2>
-            <p>Have another project to share? Use this space for a creative experiment, a team activity, or something you’re planning next.</p>
-            <a class="project-link" href="https://github.com/faridaslanova01/mygithub" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
       </div>
     </section>
 
-    <section class="project-arcade" aria-labelledby="memory-title">
+    <section class="project-arcade" aria-labelledby="arcade-title">
       <div class="shell">
         <div class="arcade-heading">
           <div>
-            <p class="eyebrow">A SMALL SIDE QUEST</p>
-            <h2 id="memory-title">Match the <em>ideas.</em></h2>
+            <p class="eyebrow">ARCADE / CHALLENGE ROOM</p>
+            <h2 id="arcade-title">Pick a side <em>quest.</em></h2>
           </div>
-          <p class="arcade-note">A quick memory game for curious minds. Find all four pairs in as few turns as you can. Every match earns 5 XP.</p>
+          <p class="arcade-note">Match a memory grid, beat the signal, or crack the code. Your XP carries across the whole site.</p>
         </div>
         <div class="memory-game">
+          <h3 class="memory-game-title" id="memory-title"><span>SIDE QUEST / 04</span> Match the ideas</h3>
           <div class="memory-grid" id="memory-grid" role="group" aria-label="Memory matching cards"></div>
           <aside class="memory-side">
             <div class="memory-buddy">
@@ -149,7 +138,7 @@
         </div>
         <article class="reaction-quest" id="reaction-quest" aria-labelledby="reaction-title">
           <div class="reaction-copy">
-            <p class="eyebrow">SIDE QUEST / 04</p>
+            <p class="eyebrow">SIDE QUEST / 05</p>
             <h3 id="reaction-title">Signal sprint</h3>
             <p>Wait for the signal to light up, then tap as quickly as you can. Every clean reaction earns 1 XP.</p>
           </div>
@@ -165,6 +154,41 @@
             </div>
           </div>
         </article>
+        <article class="codebreaker-quest" id="codebreaker-quest" aria-labelledby="codebreaker-title">
+          <div class="codebreaker-intro">
+            <p class="eyebrow">SIDE QUEST / 06</p>
+            <h3 id="codebreaker-title">Crack the code</h3>
+            <p>Find the hidden three-symbol code in six tries. A solved code earns 10 XP.</p>
+          </div>
+          <div class="codebreaker-game">
+            <div class="codebreaker-play">
+              <div class="codebreaker-slots" id="codebreaker-slots" role="group" aria-label="Your current three-symbol guess">
+                <span class="codebreaker-slot" data-slot="0">?</span>
+                <span class="codebreaker-slot" data-slot="1">?</span>
+                <span class="codebreaker-slot" data-slot="2">?</span>
+              </div>
+              <div class="codebreaker-keypad" id="codebreaker-keypad" role="group" aria-label="Choose a code symbol">
+                <button class="code-symbol" type="button" data-symbol="triangle" aria-label="Choose triangle">▲</button>
+                <button class="code-symbol" type="button" data-symbol="circle" aria-label="Choose circle">●</button>
+                <button class="code-symbol" type="button" data-symbol="square" aria-label="Choose square">■</button>
+                <button class="code-symbol" type="button" data-symbol="diamond" aria-label="Choose diamond">◆</button>
+              </div>
+              <div class="codebreaker-actions">
+                <button class="button button-accent codebreaker-undo" id="codebreaker-undo" type="button" disabled>Undo</button>
+                <button class="button button-dark codebreaker-submit" id="codebreaker-submit" type="button" disabled>Check code</button>
+              </div>
+            </div>
+            <aside class="codebreaker-status">
+              <p class="codebreaker-message" id="codebreaker-message" role="status" aria-live="polite">Choose three different symbols to build your guess.</p>
+              <div class="codebreaker-stats">
+                <span>Attempts <output id="codebreaker-attempts">0 / 6</output></span>
+                <span>Codes cracked <output id="codebreaker-wins">0</output></span>
+              </div>
+              <ol class="codebreaker-history" id="codebreaker-history" aria-label="Previous guesses"></ol>
+              <button class="button button-dark codebreaker-reset" id="codebreaker-reset" type="button">New code</button>
+            </aside>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -178,7 +202,7 @@
   <footer class="site-footer">
     <div class="shell footer-inner">
       <a class="wordmark footer-mark" href="index.html" aria-label="Farida Aslanova home">FA<span>.</span></a>
-      <p>Made with curiosity <span aria-hidden="true">✳</span> <span>2026</span></p>
+      <p>Made with curiosity <span aria-hidden="true">✳</span> <span id="year">2026</span></p>
       <a class="github-link" href="https://github.com/faridaslanova01/mygithub" target="_blank" rel="noreferrer" aria-label="Visit my GitHub repository">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 .1.75 2.4 3.19 1.71.1-.73.39-1.23.7-1.52-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.71.78 1.14 1.77 1.14 2.99 0 4.29-2.61 5.23-5.1 5.51.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
       </a>
