@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A selection of my coding, Hour of Code, and robotics projects.">
   <title>Projects | Your Name</title>
+  <script src="theme.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="cursor.js" defer></script>
+  <script src="scroll-reveal.js" defer></script>
+  <script src="wheel-smoothing.js" defer></script>
+  <script src="game-progress.js" defer></script>
+  <script src="signal-sprint.js" defer></script>
+  <script src="memory-game.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -20,7 +26,19 @@
         <a class="nav-link" href="about.html">About</a>
         <a class="nav-link is-current" href="projects.html" aria-current="page">Projects</a>
       </div>
+      <div class="game-hud" aria-label="Player progress">
+        <span class="game-level">LV <output id="arcade-level">1</output></span>
+        <span class="game-xp"><output id="arcade-xp">0</output> XP</span>
+        <span class="game-progress-track" role="progressbar" aria-label="Progress to next level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="arcade-progress"></span></span>
+        <span class="visually-hidden" id="arcade-level-announcement" aria-live="polite"></span>
+      </div>
       <a class="nav-contact" href="mailto:faridaslanova01@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+        <span class="theme-toggle-icons" aria-hidden="true">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24"><path d="M20.2 15.9A8.3 8.3 0 0 1 8.1 3.8 8.4 8.4 0 1 0 20.2 15.9Z"/></svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        </span>
+      </button>
     </nav>
   </header>
 
@@ -88,6 +106,63 @@
             <h2>One more idea</h2>
             <p>Have another project to share? Use this space for a creative experiment, a team activity, or something you’re planning next.</p>
             <a class="project-link" href="https://github.com/faridaslanova01/mygithub" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-arcade" aria-labelledby="memory-title">
+      <div class="shell">
+        <div class="arcade-heading">
+          <div>
+            <p class="eyebrow">A SMALL SIDE QUEST</p>
+            <h2 id="memory-title">Match the <em>ideas.</em></h2>
+          </div>
+          <p class="arcade-note">A quick memory game for curious minds. Find all four pairs in as few turns as you can. Every match earns 5 XP.</p>
+        </div>
+        <div class="memory-game">
+          <div class="memory-grid" id="memory-grid" role="group" aria-label="Memory matching cards"></div>
+          <aside class="memory-side">
+            <div class="memory-buddy">
+              <button class="memory-buddy-button" id="memory-buddy" type="button" aria-label="Get a hint from Bits">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M24 5v5" />
+                  <circle class="buddy-antenna" cx="24" cy="4" r="2.5" />
+                  <rect x="8" y="12" width="32" height="25" rx="9" />
+                  <circle class="buddy-eye" cx="18" cy="22" r="2" />
+                  <circle class="buddy-eye" cx="30" cy="22" r="2" />
+                  <path d="M17 29q7 6 14 0M14 39v3m20-3v3" />
+                </svg>
+              </button>
+              <div>
+                <p class="memory-buddy-name">BITS / YOUR GUIDE</p>
+                <p class="memory-buddy-message" id="memory-buddy-message" role="status" aria-live="polite">Need a hint? Bits is on the case.</p>
+              </div>
+            </div>
+            <div class="memory-stats">
+              <div><span>Turns</span><output id="memory-turns" aria-live="polite">0</output></div>
+              <div><span>Pairs</span><output id="memory-pairs">0 / 4</output></div>
+            </div>
+            <button class="button button-dark memory-reset" id="memory-reset" type="button">Shuffle &amp; restart</button>
+            <p class="memory-help">Choose two cards each turn. The pair stays open when the symbols match.</p>
+          </aside>
+        </div>
+        <article class="reaction-quest" id="reaction-quest" aria-labelledby="reaction-title">
+          <div class="reaction-copy">
+            <p class="eyebrow">SIDE QUEST / 04</p>
+            <h3 id="reaction-title">Signal sprint</h3>
+            <p>Wait for the signal to light up, then tap as quickly as you can. Every clean reaction earns 1 XP.</p>
+          </div>
+          <div class="reaction-play">
+            <button class="reaction-trigger" id="reaction-trigger" type="button" aria-describedby="reaction-help">
+              <span class="reaction-light" aria-hidden="true"></span>
+              <span id="reaction-button-label">Start reaction test</span>
+            </button>
+            <p class="reaction-help" id="reaction-help" role="status" aria-live="polite">Ready when you are. Don’t tap until the signal turns on.</p>
+            <div class="reaction-stats">
+              <span>Last <output id="reaction-last">—</output></span>
+              <span>Best <output id="reaction-best">—</output></span>
+            </div>
           </div>
         </article>
       </div>

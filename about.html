@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="My academic background, skills, qualifications, and activities.">
   <title>About | Farida Aslanova</title>
+  <script src="theme.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="cursor.js" defer></script>
+  <script src="scroll-reveal.js" defer></script>
+  <script src="wheel-smoothing.js" defer></script>
+  <script src="game-progress.js" defer></script>
+  <script src="about-game.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -20,7 +25,19 @@
         <a class="nav-link is-current" href="about.html" aria-current="page">About</a>
         <a class="nav-link" href="projects.html">Projects</a>
       </div>
+      <div class="game-hud" aria-label="Player progress">
+        <span class="game-level">LV <output id="arcade-level">1</output></span>
+        <span class="game-xp"><output id="arcade-xp">0</output> XP</span>
+        <span class="game-progress-track" role="progressbar" aria-label="Progress to next level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="arcade-progress"></span></span>
+        <span class="visually-hidden" id="arcade-level-announcement" aria-live="polite"></span>
+      </div>
       <a class="nav-contact" href="mailto:faridaslanova01@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+        <span class="theme-toggle-icons" aria-hidden="true">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24"><path d="M20.2 15.9A8.3 8.3 0 0 1 8.1 3.8 8.4 8.4 0 1 0 20.2 15.9Z"/></svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        </span>
+      </button>
     </nav>
   </header>
 
@@ -34,8 +51,36 @@
 
     <section class="about-story section-band">
       <div class="shell story-grid">
-        <p class="eyebrow">A NOTE ABOUT ME</p>
-        <div>
+        <aside class="about-aside">
+          <p class="eyebrow">A NOTE ABOUT ME</p>
+          <section class="flight-card" aria-labelledby="flight-title">
+            <p class="eyebrow">SIDE QUEST / 02</p>
+            <h3 id="flight-title">Little flight</h3>
+            <p class="flight-description">Guide a paper plane through the open gates. Each gate earns 5 XP.</p>
+            <div class="flight-stage">
+              <canvas
+                id="flight-canvas"
+                width="600"
+                height="360"
+                tabindex="0"
+                role="img"
+                aria-label="Interactive paper-plane game. Pass through the gates to score. Use Space or Arrow Up to flap."
+                aria-describedby="flight-help"
+              ></canvas>
+              <div class="flight-overlay" id="flight-overlay" aria-live="polite">
+                <strong id="flight-message">Ready for a quick flight?</strong>
+                <span id="flight-submessage">Start below, then tap the field to flap.</span>
+              </div>
+            </div>
+            <div class="flight-controls">
+              <button class="button button-dark flight-start" id="flight-start" type="button">Start flight</button>
+              <button class="button button-accent flight-flap" id="flight-flap" type="button" disabled>Flap</button>
+              <div class="flight-score"><span>Score</span><output id="flight-score" aria-live="polite">0</output></div>
+            </div>
+            <p class="flight-help" id="flight-help">Tap the field or Flap. Keyboard: focus the game, then press Space or ↑.</p>
+          </section>
+        </aside>
+        <div class="story-copy">
           <h2>Learning feels best when I can <em>make something with it.</em></h2>
           <p>Whether I’m exploring code, working with a team, or taking on a new challenge, I like to stay curious and keep improving. I’m interested in the way thoughtful ideas become practical, useful things.</p>
           <p>Use this space to add a few details about what matters to you, what you’re working toward, and the experiences that have shaped you.</p>
