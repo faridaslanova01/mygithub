@@ -108,6 +108,9 @@ h2 { margin-bottom: 0; font-size: clamp(2.4rem, 4vw, 3.8rem); }
 .page-lede { max-width: 530px; margin-bottom: 0; color: var(--muted); font-size: 1.02rem; line-height: 1.8; }
 .about-stamp { position: absolute; right: 7%; bottom: 66px; display: grid; width: 114px; aspect-ratio: 1; place-content: center; border: 1px solid #355e4d66; border-radius: 50%; color: var(--green); font-size: .65rem; font-weight: 700; line-height: 1.4; text-align: center; transform: rotate(10deg); }
 .about-stamp span { margin-top: 4px; color: var(--coral); font-size: 1rem; }
+@media (max-width: 900px) {
+  .about-stamp { position: static; align-self: flex-end; width: 88px; margin-top: 20px; font-size: .58rem; }
+}
 .about-story { padding: 78px 0 84px; }
 .story-grid { display: grid; grid-template-columns: .65fr 1.35fr; gap: 55px; }
 .story-grid > .eyebrow { margin-top: 11px; }
@@ -187,7 +190,7 @@ h2 { margin-bottom: 0; font-size: clamp(2.4rem, 4vw, 3.8rem); }
   .nav-link { font-size: .82rem; }
   .hero { min-height: auto; grid-template-columns: 1fr; gap: 13px; padding-top: 70px; padding-bottom: 94px; }
   .hero-copy { padding-bottom: 0; }
-  .hero h1 { font-size: clamp(3.3rem, 12vw, 5rem); }
+  .hero h1 { font-size: clamp(2.9rem, 12vw, 4.2rem); }
   .hero-visual { width: min(100%, 430px); height: 390px; justify-self: center; margin-top: 16px; }
   .photo-frame { inset: 18px 56px 27px 57px; }
   .scroll-cue { bottom: 25px; }
@@ -197,7 +200,6 @@ h2 { margin-bottom: 0; font-size: clamp(2.4rem, 4vw, 3.8rem); }
   .preview-item { min-height: 210px; }
   .next-step { padding-top: 70px; padding-bottom: 76px; }
   .page-intro { min-height: 340px; padding-top: 56px; padding-bottom: 50px; }
-  .about-stamp { right: 3%; bottom: 35px; width: 88px; font-size: .58rem; }
   .about-story { padding: 62px 0; }
   .story-grid { grid-template-columns: 1fr; gap: 5px; }
   .credentials { padding-top: 68px; padding-bottom: 75px; }
@@ -225,7 +227,7 @@ h2 { margin-bottom: 0; font-size: clamp(2.4rem, 4vw, 3.8rem); }
   .hero { padding-top: 53px; }
   .eyebrow { font-size: .64rem; }
   .hero-intro { font-size: .96rem; }
-  .hero-visual { height: 330px; }
+  .hero-visual { height: 330px; overflow: hidden; }
   .photo-frame { inset: 12px 46px 24px 47px; }
   .visual-sticker { right: 0; bottom: 47px; width: 82px; font-size: .62rem; }
   .visual-caption { left: 50px; font-size: .64rem; }
@@ -238,7 +240,7 @@ h2 { margin-bottom: 0; font-size: clamp(2.4rem, 4vw, 3.8rem); }
   .next-step .button { margin-bottom: 0; }
   .page-intro { min-height: 325px; }
   .page-intro h1 { font-size: clamp(3rem, 15vw, 4.2rem); }
-  .about-stamp { right: 5px; bottom: 15px; width: 72px; }
+  .about-stamp { width: 72px; }
   .section-aside { max-width: 100%; }
   .credentials-grid { grid-template-columns: 1fr; }
   .credential-block, .credential-block + .credential-block { padding: 24px 0; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -250,6 +252,52 @@ h2 { margin-bottom: 0; font-size: clamp(2.4rem, 4vw, 3.8rem); }
   .project-image { min-height: 215px; }
   .footer-inner { min-height: 110px; flex-wrap: wrap; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
   .footer-inner p { order: 3; width: 100%; }
+}
+
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html.has-custom-cursor,
+  html.has-custom-cursor body,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button {
+    cursor: none;
+  }
+  .cursor-orbit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid var(--green);
+    border-radius: 50%;
+    background: #d8f27433;
+    opacity: 0;
+    pointer-events: none;
+    transition: width .2s ease, height .2s ease, background-color .2s ease, opacity .15s ease;
+    will-change: transform;
+  }
+  .cursor-orbit::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--coral);
+    content: "";
+    transform: translate(-50%, -50%);
+  }
+  .cursor-orbit.is-visible { opacity: 1; }
+  .cursor-orbit.is-hovering {
+    width: 38px;
+    height: 38px;
+    background: #d8f27466;
+  }
+  .cursor-orbit.is-pressed { width: 18px; height: 18px; }
+}
+
+@media (max-width: 300px) {
+  .hero h1 { font-size: 2.8rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
